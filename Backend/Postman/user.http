@@ -1,0 +1,19 @@
+@url_dev = http://localhost:3000/api/auth
+
+###
+POST {{url_dev}}/signup
+Content-Type: application/json
+
+{
+    "email" : "ming18380@gmail.com",
+    "name" : "Mings bug man",
+    "password" : "123456"
+}
+
+
+POST {{url_dev}}/verify-email
+Content-Type: application/json
+
+{
+    "code" : "633787"
+}
