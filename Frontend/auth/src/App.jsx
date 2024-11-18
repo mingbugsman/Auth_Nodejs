@@ -1,6 +1,6 @@
 import FloatingShape from "./Components/FloatingShape"
 import { SignUpPage } from "./pages/SignUpPage"
-
+import LoginPage from "./pages/LoginPage"
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
         size="w-32 h-32"
         top="40%" left ="-10%" delay={2}
         />
-        <SignUpPage/>
+        <LoginPage/>
      </div>
     </>
   )
