@@ -7,7 +7,7 @@ import { Input } from "../Components/Input";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(""); 
-  const isLoading = true
+  const isLoading = false
   const handleLogin = (e) => {
     e.preventDefault();
   };
