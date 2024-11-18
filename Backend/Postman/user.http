@@ -46,3 +46,6 @@ Content-Type:  application/json
 {
     "password" : "m/ng2k56"
 }
+
+###
+GET {{url_dev}}/check-auth
