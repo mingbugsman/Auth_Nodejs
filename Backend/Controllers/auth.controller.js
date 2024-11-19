@@ -90,7 +90,8 @@ const  logout = async (req,res) => {
 
 
 const verifyEmail = async (req, res) => {
-    const {code} = req.body;
+  
+    const code = req.body.verificationCode;
     try {
         const user = await User.findOne({
             verificationToken : code,
