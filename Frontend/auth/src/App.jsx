@@ -1,10 +1,11 @@
 import FloatingShape from "./Components/FloatingShape"
-
+import LoadingSpinner from "./Components/LoadingSpinner"
 // pages
 import { SignUpPage } from "./pages/SignUpPage"
 import LoginPage from "./pages/LoginPage"
 import EmailVerificationPage from "./pages/EmailVerificationPage"
-
+import ForgotPassword from "./pages/ForgotPassword"
+import { ResetPassword } from "./pages/ResetPassword"
 // react-router-dom
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Toaster } from "react-hot-toast"
@@ -38,7 +39,7 @@ function App() {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-
+if (isCheckingAuth) return (<LoadingSpinner/>)
   return (
     <>
      <div className="min-h-screen bg-gradient-to-br
@@ -77,6 +78,18 @@ function App() {
             </RedirectAuthenticatedUser>
           }/>
           <Route path="/verify-email" element={<EmailVerificationPage/>}/>
+          <Route path="/forgot-password" element={
+            <RedirectAuthenticatedUser>
+              <ForgotPassword/>
+            </RedirectAuthenticatedUser>
+          }/>
+
+          <Route path="/reset-password/:token" 
+          element={
+            <RedirectAuthenticatedUser>
+              <ResetPassword/>
+            </RedirectAuthenticatedUser>
+          }/>
         </Routes>
         <Toaster/>
      </div>
